@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="az"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sushi Xırdalan — Hot Roll və set menyu, pulsuz çatdırılma</title>
+<meta name="description" content="Sushi Xırdalan: Hot Roll, Philadelphia, Alaska və set menyular. Xırdalan daxilində çatdırılma pulsuzdur. Sifariş: 070 216 71 31">
+<meta name="theme-color" content="#050203">
+<meta property="og:title" content="Sushi Xırdalan"><meta property="og:image" content="logo.png">
+<link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+:root{--r:#e11d2e;--t:#f4ece8}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:linear-gradient(#050203,#14040a 45%,#060203);color:var(--t);font:400 1rem/1.7 Manrope,sans-serif;overflow-x:hidden}
+#fx{position:fixed;inset:0;z-index:0;pointer-events:none}
+main,footer{position:relative;z-index:1}
+section{min-height:100vh;padding:110px 6vw;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+a{color:inherit}
+header{position:fixed;top:0;left:0;right:0;z-index:70;display:flex;justify-content:space-between;align-items:center;padding:14px 4vw;background:linear-gradient(#050203d9,transparent)}
+.lg button{background:none;border:0;color:#fff8;font:800 .72rem Manrope;padding:8px 7px;cursor:pointer;letter-spacing:.08em}
+.lg button.on{color:var(--r)}
+#bg{background:#0008;border:1px solid #e11d2e66;color:var(--r);font:800 1.25rem Manrope;letter-spacing:.06em;padding:3px 16px;border-radius:30px;cursor:pointer;backdrop-filter:blur(8px)}
+nav{position:fixed;inset:0;z-index:60;background:radial-gradient(circle at 80% 0,#5a0a14,#050203 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;clip-path:circle(0 at 92% 4%);transition:clip-path .9s cubic-bezier(.7,0,.2,1);visibility:hidden}
+nav.on{clip-path:circle(150% at 92% 4%);visibility:visible}
+nav a{font:600 clamp(2rem,8vw,3.4rem) 'Cormorant Garamond',serif;text-decoration:none;opacity:0;transform:translateY(30px);transition:.7s;letter-spacing:.04em}
+nav.on a{opacity:1;transform:none;transition-delay:calc(.25s + var(--i)*.08s)}
+nav a:hover{color:var(--r);letter-spacing:.12em}
+.lw{position:relative;width:clamp(170px,32vw,280px);aspect-ratio:1}
+.lw::before{content:"";position:absolute;inset:-14px;border-radius:50%;background:conic-gradient(transparent,var(--r),transparent 60%);animation:sp 6s linear infinite;filter:blur(7px)}
+.lw img{position:relative;width:100%;height:100%;border-radius:50%;box-shadow:0 0 90px #e11d2e66}
+.jp{color:var(--r);letter-spacing:.6em;margin-top:30px;font-size:1.1rem;opacity:.85;padding-left:.6em}
+h1{font:700 clamp(3.6rem,14vw,9.5rem)/1 'Cormorant Garamond',serif;letter-spacing:.06em;background:linear-gradient(100deg,#7a0a14,#ff3b4d 40%,#ffd5cd 50%,#ff3b4d 60%,#7a0a14);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 5s linear infinite;filter:drop-shadow(0 0 30px #e11d2e88)}
+h1 small{display:block;font-size:.27em;letter-spacing:.75em;padding-left:.75em;margin-top:8px;font-weight:600}
+.tag{margin:22px 0 34px;max-width:520px;color:#f4ece8bb;font-size:1.1rem}
+@keyframes sp{to{transform:rotate(1turn)}}@keyframes sh{to{background-position:-250% 0}}
+.b{display:inline-block;padding:14px 30px;border-radius:40px;background:linear-gradient(135deg,#ff2d41,#8a0f1a);color:#fff;font:800 .95rem Manrope;text-decoration:none;border:0;cursor:pointer;box-shadow:0 10px 40px #e11d2e55;transition:.4s}
+.b:hover{transform:translateY(-3px) scale(1.04)}.b.o{background:#0006;border:1px solid #e11d2e99;box-shadow:none}
+.dn{margin-top:46px;width:1px;height:60px;background:linear-gradient(var(--r),transparent);animation:dn 2s infinite}
+@keyframes dn{50%{transform:scaleY(.4);opacity:.4}}
+h2{font:600 clamp(2.5rem,8vw,5rem)/1.1 'Cormorant Garamond',serif;margin-bottom:12px}
+h2::after{content:"";display:block;width:70px;height:2px;margin:16px auto 0;background:var(--r);box-shadow:0 0 16px var(--r)}
+.sub{color:#f4ece899;max-width:560px}
+.gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:22px;width:min(1200px,100%);margin-top:44px}
+.cd{position:relative;aspect-ratio:4/5;border-radius:6px 28px 6px 28px;overflow:hidden;cursor:pointer;border:1px solid #e11d2e44;background:#000}
+.cd img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.16,1,.3,1)}
+.cd:hover img{transform:scale(1.09)}.cd:hover{border-color:var(--r);box-shadow:0 0 40px #e11d2e55}
+.cd i{position:absolute;inset:auto 0 0;padding:44px 18px 16px;background:linear-gradient(transparent,#000e);font:700 1.05rem Manrope;text-align:left}
+.cd i b{color:#ff4b5c;float:right}
+.ft{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px;width:min(1100px,100%);margin-top:44px}
+.fc{padding:30px 22px;border:1px solid #e11d2e33;border-radius:28px 6px 28px 6px;background:#ffffff09;backdrop-filter:blur(10px)}
+.fc em{display:block;font:normal 2rem/1 'Cormorant Garamond',serif;color:var(--r);margin-bottom:12px}
+.fc p{font-weight:600}
+.ab{max-width:660px;margin-top:30px;font-size:1.1rem;color:#f4ece8cc}
+.wh{position:relative;width:min(86vw,380px);aspect-ratio:1;margin:46px 0 30px}
+#wheel{width:100%;height:100%;border-radius:50%;border:6px solid #3a0a10;box-shadow:0 0 70px #e11d2e66,inset 0 0 40px #000;position:relative;transition:transform 5.5s cubic-bezier(.1,.75,.1,1)}
+#wheel .l{position:absolute;inset:0;display:flex;justify-content:center;padding-top:9%}
+#wheel .l i{width:26%;font:800 .62rem/1.2 Manrope;font-style:normal;text-shadow:0 1px 4px #000}
+.pt{position:absolute;top:-16px;left:50%;margin-left:-14px;border:14px solid transparent;border-top:26px solid #fff;z-index:2;filter:drop-shadow(0 0 8px var(--r))}
+.hub{position:absolute;inset:38%;border-radius:50%;background:radial-gradient(#ff3b4d,#5a0a14);border:3px solid #fff3;z-index:1}
+#res{min-height:110px;opacity:0;transform:scale(.6);transition:.8s cubic-bezier(.2,1.6,.3,1)}
+#res.on{opacity:1;transform:none}#res b{display:block;font:700 clamp(2rem,7vw,3rem) 'Cormorant Garamond',serif;color:#ff4b5c;margin:4px 0 12px}
+.note{margin-top:18px;font-size:.8rem;color:#f4ece877}
+#fl{position:fixed;inset:0;z-index:90;pointer-events:none;background:radial-gradient(circle,#fff 0,#ff2d41 25%,#8a0f1a 60%);opacity:0;clip-path:circle(0)}
+#fl.go{animation:fl 1s ease-out}
+@keyframes fl{0%{opacity:1;clip-path:circle(0)}45%{opacity:1;clip-path:circle(150%)}100%{opacity:0;clip-path:circle(150%)}}
+.cw{display:grid;grid-template-columns:1fr;gap:30px;width:min(1100px,100%);margin-top:40px;align-items:stretch}
+@media(min-width:860px){.cw{grid-template-columns:1fr 1.3fr}}
+.bt{display:flex;flex-direction:column;gap:12px;justify-content:center}
+.ph{font:700 clamp(2rem,6vw,2.8rem) 'Cormorant Garamond',serif;text-decoration:none}
+.row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.adr{color:#f4ece8bb}.adr b{color:#ff4b5c}
+iframe{width:100%;min-height:340px;height:100%;border:1px solid #e11d2e55;border-radius:28px 6px 28px 6px;filter:invert(.92) hue-rotate(180deg) saturate(.7)}
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:55;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 30px #25d36688;animation:pu 2.4s infinite}
+.wa svg{width:30px;fill:#fff}@keyframes pu{50%{box-shadow:0 0 0 14px #25d36600,0 8px 30px #25d36688}}
+footer{padding:36px 6vw 50px;text-align:center;color:#f4ece855;font-size:.85rem}
+.rv{opacity:0;transform:translateY(70px) scale(.95);filter:blur(10px);transition:1.3s cubic-bezier(.16,1,.3,1) calc(var(--d,0)*.12s)}
+.rv.in{opacity:1;transform:none;filter:none}
+#lb{position:fixed;inset:0;z-index:100;background:#050203f2;clip-path:circle(0 at var(--x,50%) var(--y,50%));visibility:hidden;transition:clip-path .7s ease,visibility 0s .7s}
+#lb.on{clip-path:circle(150% at var(--x,50%) var(--y,50%));visibility:visible;transition:clip-path 3s cubic-bezier(.16,1,.3,1)}
+#sl{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+#sl::-webkit-scrollbar{display:none}
+#sl div{flex:0 0 100vw;height:100%;scroll-snap-align:center;display:grid;place-items:center;padding:60px 14px 70px}
+#sl img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 0 80px #e11d2e44}
+#x{position:absolute;top:14px;right:16px;z-index:2;background:#0008;border:1px solid #e11d2e88;color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.2rem;cursor:pointer}
+#cn{position:absolute;bottom:22px;left:0;right:0;text-align:center;font-weight:700;color:#fffa}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
+</style></head>
+<body>
+<canvas id="fx"></canvas>
+<header>
+ <div class="lg"><button data-l="az" class="on">AZ</button><button data-l="tr">TR</button><button data-l="en">EN</button><button data-l="ru">RU</button></div>
+ <button id="bg" aria-label="Menu">///</button>
+</header>
+<nav id="nv"><a href="#home" style="--i:0" data-t="n1"></a><a href="#menu" style="--i:1" data-t="n2"></a><a href="#about" style="--i:2" data-t="n3"></a><a href="#wheel-s" style="--i:3" data-t="n4"></a><a href="#contact" style="--i:4" data-t="n5"></a></nav>
+<main>
+<section id="home">
+ <div class="lw rv"><img src="logo.png" alt="Sushi Xırdalan"></div>
+ <div class="jp rv" style="--d:2">寿司</div>
+ <h1 class="rv" style="--d:3">SUSHI<small>XIRDALAN</small></h1>
+ <p class="tag rv" style="--d:4" data-t="tag"></p>
+ <div class="row rv" style="--d:5"><a class="b" href="#menu" data-t="cta"></a><a class="b o" href="#contact" data-t="n5"></a></div>
+ <div class="dn"></div>
+</section>
+<section id="menu">
+ <h2 class="rv" data-t="mt"></h2><p class="sub rv" data-t="mh"></p>
+ <div class="gr" id="gr"></div>
+</section>
+<section id="about">
+ <h2 class="rv" data-t="at"></h2>
+ <p class="ab rv" data-t="ap"></p>
+ <div class="ft">
+  <div class="fc rv"><em>火</em><p data-t="f1"></p></div>
+  <div class="fc rv" style="--d:1"><em>鮮</em><p data-t="f2"></p></div>
+  <div class="fc rv" style="--d:2"><em>味</em><p data-t="f3"></p></div>
+  <div class="fc rv" style="--d:3"><em>送</em><p data-t="f4"></p></div>
+ </div>
+</section>
+<section id="wheel-s">
+ <h2 class="rv" data-t="wt"></h2>
+ <div class="wh rv"><div class="pt"></div><div id="wheel"></div><div class="hub"></div></div>
+ <button class="b rv" id="spin" data-t="wb"></button>
+ <div id="res"></div>
+ <p class="note" data-t="wn"></p>
+</section>
+<section id="contact">
+ <h2 class="rv" data-t="ct"></h2>
+ <div class="cw">
+  <div class="bt rv">
+   <a class="ph" href="tel:+994702167131">070 216 71 31</a>
+   <div class="row"><a class="b" href="tel:+994702167131" data-t="cc"></a><a class="b o" href="sms:+994702167131">SMS</a><a class="b o" href="https://wa.me/994702167131" target="_blank" rel="noopener">WhatsApp</a></div>
+   <div class="row"><a class="b o" href="https://instagram.com/sushi.xirdalan" target="_blank" rel="noopener">Instagram @sushi.xirdalan</a><a class="b o" href="https://www.google.com/maps/search/?api=1&query=Misir+Park+KFC+Xirdalan" target="_blank" rel="noopener">Google Maps</a></div>
+   <p class="adr" data-t="ad"></p>
+  </div>
+  <iframe class="rv" style="--d:2" loading="lazy" title="Sushi Xırdalan" src="https://maps.google.com/maps?q=Misir%20Park%20KFC%20Xirdalan&z=16&output=embed"></iframe>
+ </div>
+</section>
+</main>
+<footer>© 2026 Sushi Xırdalan</footer>
+<a class="wa" href="https://wa.me/994702167131" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11 19.800L3 29l6.400-2A13 13 0 1 0 16 3zm7.500 18.300c-.3.900-1.800 1.700-2.500 1.700-.600.100-1.400.100-2.200-.100a20 20 0 0 1-7.600-6.700c-.600-.800-1.900-2.500-1.900-4.300s1-2.600 1.300-3c.300-.400.700-.4 1-.4h.700c.200 0 .500-.100.800.600l1.100 2.600c.100.200.100.400 0 .600l-.500.800-.600.700c-.200.200-.400.400-.2.800.200.400 1 1.700 2.200 2.700 1.500 1.300 2.800 1.700 3.200 1.900.400.200.600.200.900-.100l1.200-1.500c.300-.400.600-.300 1-.200l2.500 1.200c.400.200.700.300.800.500.100.200.100 1-.200 1.800z"/></svg></a>
+<div id="fl"></div>
+<div id="lb"><button id="x" aria-label="Close">✕</button><div id="sl"></div><div id="cn"></div></div>
+<script>
+const L={
+az:{n1:"Giriş",n2:"Menyu",n3:"Haqqımızda",n4:"Tövsiyə çarxı",n5:"Əlaqə",tag:"Dad bir dəfəyə deyil, hər dənəyə dəyər!",cta:"Menyuya bax",mt:"Set menyumuz",mh:"Böyütmək üçün toxun, yana sürüşdürüb digər setlərə bax",at:"Suşinin ruhu",ap:"Hər roll əl ilə bükülür, təzə məhsuldan hazırlanır və bol souslu, isti təqdim olunur. Xırdalanda dadı ilə fərqlənən sushi məkanı.",f1:"İsti və bol souslu",f2:"Təzə və keyfiyyətli",f3:"Dadına zəmanət",f4:"Xırdalan daxilində çatdırılma pulsuzdur",wt:"Tövsiyə çarxı",wb:"Çarxı fırlat",wn:"Çarx əyləncə üçündür, hədiyyələr real deyil.",wr:"Sizə tövsiyəmiz",wo:"Bunu sifariş et",ct:"Əlaqə",cc:"Zəng et",ad:"<b>Ünvan:</b> Xırdalan, Misir Park, KFC-nin yanı<br>Çatdırılma pulsuzdur"},
+tr:{n1:"Giriş",n2:"Menü",n3:"Hakkımızda",n4:"Tavsiye çarkı",n5:"İletişim",tag:"Lezzet bir kereye değil, her parçaya değer!",cta:"Menüyü gör",mt:"Set menümüz",mh:"Büyütmek için dokun, yana kaydırarak diğer setlere bak",at:"Suşinin ruhu",ap:"Her roll elle sarılır, taze malzemeyle hazırlanır ve bol soslu, sıcak servis edilir. Xırdalan'ın lezzetiyle fark yaratan suşi mekânı.",f1:"Sıcak ve bol soslu",f2:"Taze ve kaliteli",f3:"Lezzet garantisi",f4:"Xırdalan içi teslimat ücretsiz",wt:"Tavsiye çarkı",wb:"Çarkı çevir",wn:"Çark eğlence amaçlıdır, hediyeler gerçek değildir.",wr:"Size tavsiyemiz",wo:"Bunu sipariş et",ct:"İletişim",cc:"Ara",ad:"<b>Adres:</b> Xırdalan, Mısır Park, KFC'nin yanı<br>Teslimat ücretsiz"},
+en:{n1:"Home",n2:"Menu",n3:"About",n4:"Lucky wheel",n5:"Contact",tag:"Flavor worth every single piece!",cta:"View menu",mt:"Our set menu",mh:"Tap to enlarge, swipe sideways for more sets",at:"The spirit of sushi",ap:"Every roll is hand-rolled from fresh ingredients and served hot with plenty of sauce. Xırdalan's sushi spot with a taste of its own.",f1:"Hot and generously sauced",f2:"Fresh and high quality",f3:"Taste guaranteed",f4:"Free delivery within Xırdalan",wt:"Lucky wheel",wb:"Spin the wheel",wn:"The wheel is just for fun, prizes are not real.",wr:"We recommend",wo:"Order this",ct:"Contact",cc:"Call",ad:"<b>Address:</b> Xırdalan, Misir Park, next to KFC<br>Delivery is free"},
+ru:{n1:"Главная",n2:"Меню",n3:"О нас",n4:"Колесо советов",n5:"Контакты",tag:"Вкус, достойный каждого кусочка!",cta:"Смотреть меню",mt:"Наши сеты",mh:"Нажмите, чтобы увеличить, листайте вбок за другими сетами",at:"Душа суши",ap:"Каждый ролл скручивается вручную из свежих продуктов и подаётся горячим, с обилием соуса. Суши-место Хырдалана со своим вкусом.",f1:"Горячие и с обилием соуса",f2:"Свежие и качественные",f3:"Гарантия вкуса",f4:"Бесплатная доставка по Хырдалану",wt:"Колесо советов",wb:"Крутить колесо",wn:"Колесо для развлечения, призы не настоящие.",wr:"Мы советуем",wo:"Заказать",ct:"Контакты",cc:"Позвонить",ad:"<b>Адрес:</b> Хырдалан, Мисир Парк, рядом с KFC<br>Доставка бесплатна"}};
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+let lang='az',last=null;
+function setLang(l){lang=l;document.documentElement.lang=l;$$('[data-t]').forEach(e=>e.innerHTML=L[l][e.dataset.t]);$$('.lg button').forEach(b=>b.classList.toggle('on',b.dataset.l==l));if(last!==null)show(last)}
+$$('.lg button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+/* menu */
+const M=[["Super Set","25 ₼"],["Hott Set","19.99 ₼"],["King Set","35 ₼"],["Elite Set","24 ₼"],["Sushi Menyu",""],["Miyabi Set","33.90 ₼"],["Sushi Menyu",""],["Diamond Set","23 ₼"],["Hot Roll Set","22 ₼"]];
+$('#gr').innerHTML=M.map((m,i)=>`<div class="cd rv" style="--d:${i%4}" data-i="${i}"><img loading="lazy" src="m${i+1}.jpg" alt="${m[0]}"><i>${m[0]}<b>${m[1]}</b></i></div>`).join('');
+$('#sl').innerHTML=M.map((m,i)=>`<div><img src="m${i+1}.jpg" alt="${m[0]}"></div>`).join('');
+const lb=$('#lb'),sl=$('#sl');let cur=0;
+function cnt(){cur=Math.round(sl.scrollLeft/innerWidth);$('#cn').textContent=(cur+1)+' / '+M.length}
+sl.onscroll=cnt;
+$$('.cd').forEach(c=>c.onclick=e=>{lb.style.setProperty('--x',e.clientX+'px');lb.style.setProperty('--y',e.clientY+'px');sl.style.scrollBehavior='auto';sl.scrollLeft=c.dataset.i*innerWidth;cnt();lb.classList.add('on');document.body.style.overflow='hidden'});
+const cl=()=>{lb.classList.remove('on');document.body.style.overflow=''};$('#x').onclick=cl;
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key=='Escape')cl();if(e.key=='ArrowRight'||e.key=='ArrowLeft'){sl.style.scrollBehavior='smooth';sl.scrollLeft+=(e.key=='ArrowRight'?1:-1)*innerWidth}});
+/* nav */
+const nv=$('#nv'),bg=$('#bg');
+bg.onclick=()=>{nv.classList.toggle('on');bg.textContent=nv.classList.contains('on')?'✕':'///'};
+$$('nav a').forEach(a=>a.onclick=()=>{nv.classList.remove('on');bg.textContent='///'});
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+$$('.rv').forEach(e=>io.observe(e));
+/* wheel */
+const W=["Hot Roll Chicken","Hot Roll Kani","Philadelphia","Alaska Chicken","California Crab","Chipsi Roll","Wasabi","Sushi Mix"],col=["#9b0f1d","#1b0a0d"];
+$('#wheel').style.background='conic-gradient(from -22.5deg,'+W.map((_,i)=>`${i%2?col[1]:col[0]} ${i*45}deg ${i*45+45}deg`).join(',')+')';
+$('#wheel').innerHTML=W.map((w,i)=>`<span class="l" style="transform:rotate(${i*45}deg)"><i>${w}</i></span>`).join('');
+let rot=0,busy=false;
+function show(k){last=k;const r=$('#res');r.innerHTML=`${L[lang].wr}<b>${W[k]}</b><a class="b" target="_blank" rel="noopener" href="https://wa.me/994702167131?text=${encodeURIComponent('Salam! '+W[k]+' sifariş etmək istəyirəm')}">${L[lang].wo}</a>`;r.classList.add('on')}
+$('#spin').onclick=()=>{if(busy)return;busy=true;$('#res').classList.remove('on');last=null;const f=$('#fl');f.classList.remove('go');void f.offsetWidth;f.classList.add('go');
+ setTimeout(()=>{const k=Math.floor(Math.random()*8);rot+=1800+((360-k*45)-(rot%360)+360)%360;$('#wheel').style.transform=`rotate(${rot}deg)`;setTimeout(()=>{show(k);busy=false},5700)},450)};
+/* particles: slower the further you scroll */
+const c=$('#fx'),x=c.getContext('2d');let w,h,sp=1;const P=[];
+function rs(){w=c.width=innerWidth;h=c.height=innerHeight}addEventListener('resize',rs);rs();
+const np=innerWidth<700?55:100;
+for(let i=0;i<np;i++)P.push({x:Math.random()*w,y:Math.random()*h,r:1+Math.random()*2.8,v:.3+Math.random(),d:Math.random()*6.28,a:.25+Math.random()*.75});
+(function f(){x.clearRect(0,0,w,h);const m=Math.min(1,scrollY/Math.max(1,document.body.scrollHeight-innerHeight)),t=Math.pow(1-m,2.2)+.012;sp+=(t-sp)*.04;
+ for(const p of P){p.y-=p.v*sp*1.5;p.d+=.012*sp;p.x+=Math.sin(p.d)*.5*sp;if(p.y<-12){p.y=h+12;p.x=Math.random()*w}
+ x.globalAlpha=p.a*(.5+.5*Math.sin(p.d*2));x.shadowBlur=14;x.shadowColor='#ff2d41';x.fillStyle=`rgb(255,${70+p.a*90|0},40)`;x.beginPath();x.arc(p.x,p.y,p.r,0,6.3);x.fill()}
+ requestAnimationFrame(f)})();
+setLang('az');
+</script>
+</body></html>
